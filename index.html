@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Md Rakibul Islam is a Full Stack Web Developer, Android App Developer, YouTuber, and cybersecurity enthusiast crafting modern digital experiences."
+    />
+    <meta name="keywords" content="Md Rakibul Islam, Full Stack Developer, Android Developer, portfolio, web developer" />
+    <meta name="theme-color" content="#050816" />
+    <title>Md Rakibul Islam | Premium Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loader" aria-label="Loading portfolio">
+      <div class="loader-ring"></div>
+      <p>Initializing experience...</p>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="mouse-glow"></div>
+    <div class="scroll-progress"></div>
+
+    <canvas id="particles-js"></canvas>
+
+    <header class="topbar">
+      <a class="brand" href="#home">
+        <span class="brand-mark"></span>
+        <span>Rakibul</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="hero-bg">
+          <div class="orb orb-a"></div>
+          <div class="orb orb-b"></div>
+          <div class="orb orb-c"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-image-container" data-tilt>
+            <div class="image-glow"></div>
+            <div class="image-particles"></div>
+            <div class="image-frame">
+              <img src="profile.png" alt="Md Rakibul Islam" class="profile-image" />
+            </div>
+          </div>
+          <div class="hero-intro">
+            <span class="line-line">Hello,</span>
+            <span class="line-line line-2">I'm</span>
+            <div class="hero-name-section">
+              <h1 class="hero-name">
+                <span class="typed-name" id="typed-name"></span>
+                <span class="cursor-blink">|</span>
+              </h1>
+            </div>
+            <p class="hero-subtitle">
+              <span id="typed-subtitle"></span>
+            </p>
+            <div class="hero-actions">
+              <a id="download-resume" class="btn btn-primary" href="#" download="resume.pdf">Download Resume</a>
+              <a class="btn btn-glow" href="#contact">Hire Me</a>
+              <a class="btn btn-ghost" href="#contact">Contact Me</a>
+            </div>
+            <div class="social-icons" aria-label="Social links">
+              <a href="https://github.com/rakibul200514" target="_blank" rel="noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/md-rakibul-islam-494b13380" target="_blank" rel="noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/@TechOrbitbyRakibul" target="_blank" rel="noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="floating-badge">Full Stack Developer</div>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-heading" data-aos="fade-up">
+          <p class="eyebrow">About Me</p>
+          <h2>Designing the future with code and creativity.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card" data-aos="fade-right">
+            <p>
+              I am Md Rakibul Islam, a passionate Full Stack Web Developer and Android App Developer who enjoys building modern websites, mobile applications, and innovative digital solutions.
+            </p>
+            <p>
+              I also create educational technology content on YouTube to help students and developers learn programming, AI tools, web development, and career skills.
+            </p>
+            <p>
+              I continuously improve my knowledge in software development, Firebase, UI/UX, and cybersecurity while building practical real-world projects.
+            </p>
+          </div>
+          <div class="about-card accent" data-aos="fade-left">
+            <div class="chip-list">
+              <span>Reactive UI</span>
+              <span>Firebase</span>
+              <span>Cybersecurity</span>
+              <span>App Development</span>
+              <span>SEO</span>
+              <span>Performance</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section services">
+        <div class="section-heading" data-aos="fade-up">
+          <p class="eyebrow">Services</p>
+          <h2>High-impact services designed for modern brands and founders.</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up"><i class="fas fa-globe"></i><h3>Website Development</h3><p>Landing pages, portfolios, and conversion-focused websites.</p></div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-mobile-alt"></i><h3>Android App Development</h3><p>Feature-rich Android apps with polished UX and Firebase integration.</p></div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-palette"></i><h3>UI/UX Design</h3><p>Beautiful interfaces with thoughtful interaction and accessibility.</p></div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-rocket"></i><h3>Website Optimization</h3><p>SEO, performance, and smooth experiences that scale with your growth.</p></div>
+        </div>
+      </section>
+
+      <section class="section timeline-section">
+        <div class="section-heading" data-aos="fade-up">
+          <p class="eyebrow">Experience Timeline</p>
+          <h2>Growth shaped by curiosity, consistency, and hands-on building.</h2>
+        </div>
+        <div class="timeline" data-aos="fade-up">
+          <div class="timeline-item"><span>2021</span><h3>Started Programming</h3></div>
+          <div class="timeline-item"><span>2022</span><h3>Learned Web Development</h3></div>
+          <div class="timeline-item"><span>2023</span><h3>Started Android Development</h3></div>
+          <div class="timeline-item"><span>2024</span><h3>Built Multiple Projects</h3></div>
+          <div class="timeline-item"><span>2025</span><h3>Created TechOrbit YouTube Channel</h3></div>
+          <div class="timeline-item"><span>Now</span><h3>Continuously Learning</h3></div>
+        </div>
+      </section>
+
+      <section class="section stats-section">
+        <div class="stats-grid">
+          <div class="stat-card" data-aos="zoom-in"><strong data-count="25">0</strong><span>Projects Completed</span></div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="100"><strong data-count="120">0</strong><span>Happy Users</span></div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="200"><strong data-count="50000">0</strong><span>Lines of Code</span></div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="300"><strong data-count="12">0</strong><span>Certificates</span></div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="400"><strong data-count="80">0</strong><span>YouTube Videos</span></div>
+          <div class="stat-card" data-aos="zoom-in" data-aos-delay="500"><strong data-count="2500">0</strong><span>Learning Hours</span></div>
+        </div>
+      </section>
+
+      <section class="section youtube-section">
+        <div class="youtube-card" data-aos="fade-up">
+          <div>
+            <p class="eyebrow">YouTube</p>
+            <h2>TechOrbit by Rakibul</h2>
+            <p>Sharing tutorials on Programming, AI Tools, Web Development, Android Development, Career Guidance, and Technology.</p>
+            <a class="btn btn-primary" href="https://www.youtube.com/@TechOrbitbyRakibul" target="_blank" rel="noreferrer">Visit YouTube</a>
+          </div>
+            <div class="youtube-badge"><i class="fab fa-youtube"></i><span>Fresh learning content</span><div class="badge-glow"></div></div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects">
+        <div class="section-heading" data-aos="fade-up">
+          <p class="eyebrow">Featured Projects</p>
+          <h2>Selected apps and products built with focus, polish, and real-world value.</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-top">
+              <span><i class="fas fa-mobile-alt"></i></span>
+              <span>Android App</span>
+            </div>
+            <h3>Chor Polish</h3>
+            <p>A polished Android game experience with a smooth interface and engaging gameplay that stands out from typical casual apps.</p>
+            <div class="tag-row">
+              <span>Android</span>
+              <span>Game</span>
+              <span>UI/UX</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-small btn-primary" href="https://play.google.com/store/apps/details?id=com.rakibul.chorpolish&pcampaignid=web_share" target="_blank" rel="noreferrer">View on Play Store</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-top">
+              <span><i class="fas fa-globe"></i></span>
+              <span>Web App</span>
+            </div>
+            <h3>TalentBook</h3>
+            <p>A modern web platform designed to help users discover talent, connect opportunities, and present their work more professionally.</p>
+            <div class="tag-row">
+              <span>Web App</span>
+              <span>Portfolio</span>
+              <span>Modern UI</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-small btn-secondary" href="https://talentbook-9ee92.web.app/app/" target="_blank" rel="noreferrer">Open TalentBook</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading" data-aos="fade-up">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s build something valuable together.</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-left">
+            <div class="contact-card">
+              <h3>Md Rakibul Islam</h3>
+              <p><i class="fas fa-phone"></i> +91 9395184827</p>
+              <p><i class="fas fa-envelope"></i> techorbitbyrakibul@gmail.com</p>
+              <div class="contact-actions">
+                <a class="btn btn-small" href="#" data-action="call" data-value="+919395184827" title="Call"><i class="fas fa-phone"></i> Call</a>
+                <a class="btn btn-small" href="#" data-action="email" data-value="techorbitbyrakibul@gmail.com" title="Email"><i class="fas fa-envelope"></i> Email</a>
+                <a class="btn btn-small" href="https://wa.me/919395184827" target="_blank" rel="noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wave"></div>
+      <p>Made with ❤️ by Md Rakibul Islam</p>
+      <div class="footer-links">
+        <a href="#home">Back to Top</a>
+        <a href="https://www.youtube.com/@TechOrbitbyRakibul" target="_blank" rel="noreferrer">YouTube</a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <p class="copyright">© 2026 Md Rakibul Islam. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
