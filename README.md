@@ -20,7 +20,6 @@ This repository contains the source code for my personal portfolio website. It s
 ## 🎥 YouTube Channel
 I run a tech and educational YouTube channel called **Tech Orbit by Rakibul**, where I create tutorials on programming, SQL, and other technology topics.
 * **Subscribe & Watch:** [Tech Orbit by Rakibul](https://youtube.com/@techorbitbyrakibul)
-* **Featured Video:** [Learn SQL Basics](https://youtu.be/hfBmt_e56qQ)
 
 ## 📫 Let's Connect
 Feel free to reach out to me for collaborations, tech discussions, or project opportunities!
