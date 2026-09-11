@@ -1088,3 +1088,32 @@ a {
   100% { transform: translate3d(3%, 2%, 0) scale(1.06); }
 }
 
+/* Mobile Responsive Centering Fix */
+@media (max-width: 768px) {
+    .hero-intro {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-actions {
+        justify-content: center !important;
+        align-items: center;
+        width: 100%;
+    }
+    .social-icons {
+        justify-content: center !important;
+        width: 100%;
+    }
+    .hero-name-section h1 {
+        justify-content: center !important;
+    }
+    .section-heading {
+        text-align: center !important;
+        align-items: center;
+    }
+    .floating-badge {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}
