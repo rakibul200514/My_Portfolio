@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const loader = document.querySelector('.loader');
   const cursorDot = document.querySelector('.cursor-dot');
   const cursorOutline = document.querySelector('.cursor-outline');
@@ -32,6 +33,50 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.cursor = 'none';
   }
 
+  const initCodeRain = () => {
+    const canvas = document.getElementById('code-rain');
+    if (!canvas || prefersReducedMotion) return;
+
+    const context = canvas.getContext('2d');
+    const glyphs = '01{}[]<>/\\$#@;:';
+    const fontSize = 14;
+    let columns = 0;
+    let drops = [];
+
+    const resize = () => {
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * ratio;
+      canvas.height = window.innerHeight * ratio;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      columns = Math.ceil(window.innerWidth / fontSize);
+      drops = Array.from({ length: columns }, () => Math.random() * -40);
+    };
+
+    const draw = () => {
+      context.fillStyle = 'rgba(2, 5, 15, 0.075)';
+      context.fillRect(0, 0, window.innerWidth, window.innerHeight);
+      context.font = `${fontSize}px Space Grotesk, monospace`;
+
+      drops.forEach((drop, index) => {
+        const char = glyphs[Math.floor(Math.random() * glyphs.length)];
+        const brightness = Math.random() > 0.92 ? 0.9 : 0.25;
+        context.fillStyle = `rgba(0, 229, 255, ${brightness})`;
+        context.fillText(char, index * fontSize, drop * fontSize);
+        drops[index] = drop * fontSize > window.innerHeight && Math.random() > 0.975 ? 0 : drop + 0.55;
+      });
+
+      window.requestAnimationFrame(draw);
+    };
+
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    draw();
+  };
+
+  initCodeRain();
+
   const handleScroll = () => {
     const scrollTop = window.scrollY;
     const height = document.documentElement.scrollHeight - window.innerHeight;
@@ -63,16 +108,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     await new Promise((resolve) => setTimeout(resolve, 800));
     await typeName('Md Rakibul Islam');
-    const typed = new Typed(heroSubtitle, {
-      strings: ['Full Stack Web Developer', 'Android App Developer', 'Tech YouTuber', 'Cybersecurity Enthusiast'],
-      typeSpeed: 55,
-      backSpeed: 35,
-      backDelay: 1800,
-      loop: true,
-      showCursor: false,
-    });
+    if (window.Typed) {
+      new Typed(heroSubtitle, {
+        strings: ['Full Stack Web Developer', 'Android App Developer', 'Tech YouTuber', 'Cybersecurity Enthusiast'],
+        typeSpeed: 55,
+        backSpeed: 35,
+        backDelay: 1800,
+        loop: true,
+        showCursor: false,
+      });
+    } else {
+      heroSubtitle.textContent = 'Full Stack Web Developer · Cybersecurity Enthusiast';
+    }
     heroHeading.classList.add('ready');
-    return typed;
   };
 
   initHeroSequence();
@@ -138,7 +186,11 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach((el) => {
     el.setAttribute('data-aos-anchor-placement', 'top-bottom');
   });
-  AOS.init({ duration: 900, once: true, offset: 90 });
+  if (window.AOS) {
+    AOS.init({ duration: 900, once: true, offset: 90 });
+  } else {
+    revealElements.forEach((element) => element.classList.add('aos-animate'));
+  }
 
   if (window.particlesJS) {
     particlesJS('particles-js', {
@@ -160,23 +212,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
-    max: 18,
-    speed: 400,
-    glare: true,
-    'max-glare': 0.18,
-    scale: 1.05
-  });
+  if (window.VanillaTilt) {
+    VanillaTilt.init(document.querySelectorAll('[data-tilt]'), {
+      max: 18,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.18,
+      scale: 1.05
+    });
+  }
 
   const imageContainer = document.querySelector('.hero-image-container');
   if (imageContainer) {
-    VanillaTilt.init(imageContainer, {
-      max: 22,
-      speed: 500,
-      glare: true,
-      'max-glare': 0.25,
-      scale: 1.08
-    });
+    if (window.VanillaTilt) {
+      VanillaTilt.init(imageContainer, {
+        max: 22,
+        speed: 500,
+        glare: true,
+        'max-glare': 0.25,
+        scale: 1.08
+      });
+    }
   }
 
   const createImageParticles = () => {
@@ -237,30 +293,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  gsap.from('.line-line', {
-    opacity: 0,
-    y: 20,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power2.out'
-  });
+  if (window.gsap) {
+    gsap.from('.line-line', {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power2.out'
+    });
 
-  gsap.from('.hero-image-container', {
-    x: 40,
-    opacity: 0,
-    duration: 1.1,
-    delay: 0.4,
-    ease: 'power3.out'
-  });
+    gsap.from('.hero-image-container', {
+      x: 40,
+      opacity: 0,
+      duration: 1.1,
+      delay: 0.4,
+      ease: 'power3.out'
+    });
 
-  gsap.from('.hero-actions .btn', {
-    y: 18,
-    opacity: 0,
-    stagger: 0.12,
-    duration: 0.8,
-    delay: 0.8,
-    ease: 'power2.out'
-  });
+    gsap.from('.hero-actions .btn', {
+      y: 18,
+      opacity: 0,
+      stagger: 0.12,
+      duration: 0.8,
+      delay: 0.8,
+      ease: 'power2.out'
+    });
+  }
 
   const parallaxItems = document.querySelectorAll('.orb, .floating-card, .hero-image-container');
   window.addEventListener('mousemove', (e) => {
